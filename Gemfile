@@ -9,6 +9,9 @@ gem 'rails' # Choo Choo
 
 gem 'devise' # User Authentication
 gem 'thin' # Use Thin as Server
+gem 'chartkick' # For the charts
+gem 'httparty'
+
 
 group :development, :test do
   gem 'sqlite3' # SQLite3 DB

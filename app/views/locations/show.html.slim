@@ -1,47 +1,35 @@
 .city-header
-  .container-fluid
-    h1 Map Goes Here
+  = image_tag @map
 .container-fluid
   .row
     .city-main
       p#notice = notice
 
-      h1 = @location.city + ', ' + @location.state
+      h1.text-center = @job.title
 
       br
       br
+      .text-center
+        h4 Number of Jobs
+        small = '(' + @chart_data.keys.last.strftime('%B, %Y') + ' - ' + @chart_data.keys.first.strftime('%B, %Y') + ')'
 
-      h4 Job Trend
+      = line_chart(@chart_data)
 
-      = image_tag 'http://placehold.it/600x150'
+      h4.text-center = 'Avg. Salary: ' + number_to_currency(rand(95000...150000))
+
+      br
+      p Miami (/maɪˈæmi/; Spanish pronunciation: [maiˈami]) is a city located on the Atlantic coast in southeastern Florida and the county seat of Miami-Dade County. The 42nd most populated city proper in the United States, with a population of 419,777, it is the principal, central, and most populous city of the Miami metropolitan area, and the most populous metropolis in the Southeastern United States after Washington, D.C. According to the U.S. Census Bureau, Miami's metro area is the eighth most populous and fourth-largest urban area in the United States, with a population of around 5.5 million.
 
       br
 
-      h4.text-center Avg. Salary: $125,000
 
+      h4 Job Listings by Indeed
 
-      br
-      p
-       | Miami (/maɪˈæmi/; Spanish pronunciation: [maiˈami]) is a city located on the Atlantic coast in southeastern Florida and the county seat of Miami-Dade County. The 42nd most populated city proper in the United States, with a population of 419,777, it is the principal, central, and most populous city of the Miami metropolitan area, and the most populous metropolis in the Southeastern United States after Washington, D.C. According to the U.S. Census Bureau, Miami's metro area is the eighth most populous and fourth-largest urban area in the United States, with a population of around 5.5 million.
-
-      br
-
-      h4 Job Listings by GlassDoor
-
-      ol
-        li Job Listings
-
-
-        li Job Listings
-
-
-        li Job Listings
-
-
-        li Job Listings
-
-
-
-      = link_to 'Edit', edit_location_path(@location)
-      '|
-      = link_to 'Back', locations_path
+      - if @posts.present?
+        ol
+        - for post in @posts
+          li = post['jobtitle']
+          em.pull-right = post['company']
+          p = post['snippet']
+      - else
+        p Were sorry no job listings found.

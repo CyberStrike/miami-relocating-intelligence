@@ -1,12 +1,7 @@
-nav.navbar.navbar-default role="navigation"
+nav.navbar role="navigation"
   .container-fluid
-    .navbar-header
-      button.navbar-toggle.collapsed data-target="#menu" data-toggle="collapse" type="button"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to 'Shift City', root_path, class: 'navbar-brand'
+    .text-center
+      h1 = link_to 'Shift.City', root_path, class: ' '
 
     #menu.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
