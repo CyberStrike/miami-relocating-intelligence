@@ -5,7 +5,7 @@
         .search-container
           .search-input-group
             h1 Shift.City
-            = form_tag search_url, method: :get, class: 'form'
+            = form_tag search_url, method: :get, class: 'form', id:'search', remote: true
               .input-group
                 = search_field 'job', '', class: 'input form-control'
                 .input-group-btn
