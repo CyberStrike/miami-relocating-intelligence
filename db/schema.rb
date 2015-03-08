@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308010225) do
+ActiveRecord::Schema.define(version: 20150308030730) do
 
   create_table "job_location_stats", force: :cascade do |t|
     t.integer  "job_id"
@@ -49,5 +49,7 @@ ActiveRecord::Schema.define(version: 20150308010225) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "locations", ["city", "state"], name: "index_locations_on_city_and_state", unique: true
 
 end

@@ -3,6 +3,14 @@ class PagesController < ApplicationController
   end
 
   def search
-    redirect_to locations_path
+    @job = Job.search(params[:job][0].titleize)[0]
+
+    if @job.present?
+      @stats = @job.job_location_stats.order(available: :desc).limit(10)
+    else
+      flash[:notice] = 'No Such Job In Database'
+      redirect_to :back
+    end
   end
+
 end

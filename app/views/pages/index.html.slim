@@ -1,12 +1,12 @@
-.container
+.container-fluid.logo-back
   .row
-    .col-lg-6.col-lg-offset-3
+    .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3
       .row
         .search-container
           .search-input-group
-            = image_tag 'http://placehold.it/450x200', class: 'center-img'
-            = form_tag search_path, class: 'form'
+            h1 Shift.City
+            = form_tag search_url, method: :get, class: 'form'
               .input-group
-                input.form-control placeholder="Search for..."
+                = search_field 'job', '', class: 'input form-control'
                 .input-group-btn
-                  = submit_tag 'Go!', class:'btn btn-default'
+                  = submit_tag 'Go!', class:'btn btn-default', name: nil

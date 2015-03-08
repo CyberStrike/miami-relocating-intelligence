@@ -1,12 +1,47 @@
-p#notice = notice
+.city-header
+  .container-fluid
+    h1 Map Goes Here
+.container-fluid
+  .row
+    .col-lg-6.col-lg-offset-3
+      p#notice = notice
 
-p
-  strong City:
-  = @location.city
-p
-  strong State:
-  = @location.state
+      h1 = @location.city + ', ' + @location.state
 
-= link_to 'Edit', edit_location_path(@location)
-'|
-= link_to 'Back', locations_path
+      br
+      br
+
+      h4 Job Trend
+
+      = image_tag 'http://placehold.it/600x150'
+
+      br
+
+      h4.text-center Avg. Salary: $125,000
+
+
+      br
+      p
+       | Miami (/maɪˈæmi/; Spanish pronunciation: [maiˈami]) is a city located on the Atlantic coast in southeastern Florida and the county seat of Miami-Dade County. The 42nd most populated city proper in the United States, with a population of 419,777, it is the principal, central, and most populous city of the Miami metropolitan area, and the most populous metropolis in the Southeastern United States after Washington, D.C. According to the U.S. Census Bureau, Miami's metro area is the eighth most populous and fourth-largest urban area in the United States, with a population of around 5.5 million.
+
+      br
+
+      h4 Job Listings by GlassDoor
+
+      ol
+        li Job Listings
+
+
+        li Job Listings
+
+
+        li Job Listings
+
+
+        li Job Listings
+
+
+
+      = link_to 'Edit', edit_location_path(@location)
+      '|
+      = link_to 'Back', locations_path

@@ -1,0 +1,8 @@
+
+.container
+  h3 = @job.title
+  ol
+    - for stat in @stats
+      li = link_to job_location_path(@job, stat.location) do
+        = stat.location.city + ', ' + stat.location.state
+        = " (#{stat.available})"

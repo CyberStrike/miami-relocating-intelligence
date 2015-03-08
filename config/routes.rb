@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :jobs
 
   root 'pages#index'
 
   get 'home', to: 'pages#index', as: :home
 
-  match 'pages/search', as: :search, via: [:get, :post]
+  match 'search', to:'pages#search', as: :search, via: [:get, :post]
+
+  resources :jobs do
+    resources :locations
+  end
 
   resources :locations
 
