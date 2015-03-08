@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def search
+    redirect_to locations_path
   end
 end

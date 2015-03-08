@@ -1,2 +1,12 @@
-h1 Pages#index
-p Find me in app/views/pages/index.html.slim
+.container
+  .row
+    .col-lg-6.col-lg-offset-3
+      .row
+        .search-container
+          .search-input-group
+            = image_tag 'http://placehold.it/450x200', class: 'center-img'
+            = form_tag search_path, class: 'form'
+              .input-group
+                input.form-control placeholder="Search for..."
+                .input-group-btn
+                  = submit_tag 'Go!', class:'btn btn-default'
