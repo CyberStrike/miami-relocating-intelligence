@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308001631) do
+ActiveRecord::Schema.define(version: 20150308010225) do
+
+  create_table "job_location_stats", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "location_id"
+    t.integer  "available"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "job_location_stats", ["job_id", "location_id"], name: "index_job_location_stats_on_job_id_and_location_id", unique: true
+  add_index "job_location_stats", ["job_id"], name: "index_job_location_stats_on_job_id"
+  add_index "job_location_stats", ["location_id"], name: "index_job_location_stats_on_location_id"
 
   create_table "job_locations", force: :cascade do |t|
     t.integer  "job_id"
