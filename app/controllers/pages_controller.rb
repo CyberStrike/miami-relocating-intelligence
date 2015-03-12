@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @job = Job.search(params[:job][0].titleize)[0]
+    @job = Job.search(params[:job][:title].titleize)[0]
 
     if @job.present?
       @stats = @job.job_location_stats.order(available: :desc).limit(10)

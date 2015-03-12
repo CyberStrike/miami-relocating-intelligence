@@ -16,7 +16,7 @@
 
       = line_chart(@chart_data)
 
-      h4.text-center = 'Avg. Salary: ' + number_to_currency(rand(95000...150000))
+      h4.text-center = 'Avg. Salary: ' + number_to_currency(rand(45000...85000))
 
       br
       p Miami (/maɪˈæmi/; Spanish pronunciation: [maiˈami]) is a city located on the Atlantic coast in southeastern Florida and the county seat of Miami-Dade County. The 42nd most populated city proper in the United States, with a population of 419,777, it is the principal, central, and most populous city of the Miami metropolitan area, and the most populous metropolis in the Southeastern United States after Washington, D.C. According to the U.S. Census Bureau, Miami's metro area is the eighth most populous and fourth-largest urban area in the United States, with a population of around 5.5 million.
@@ -24,7 +24,8 @@
       br
 
 
-      h4 Job Listings by Indeed
+      h3 Job Listings by Indeed
+      br
 
       - if @posts.present?
         ol

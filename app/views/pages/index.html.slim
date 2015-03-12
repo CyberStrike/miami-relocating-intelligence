@@ -5,8 +5,11 @@
         .search-container
           .search-input-group
             h1 Shift.City
-            = form_tag search_url, method: :get, class: 'form', id:'search', remote: true
+            = form_tag search_url, method: :get,
+                       class: 'form', id:'search', remote: true
               .input-group
-                = search_field 'job', '', class: 'input form-control'
+                = hidden_field 'job','title', value:'Firefighter'
+                = search_field 'job', 'title',
+                               value: 'Firefighter', class: 'input form-control', disabled: true
                 .input-group-btn
                   = submit_tag 'Go!', class:'btn btn-default', name: nil
